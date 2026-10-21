@@ -1,0 +1,137 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: chat
+  name: plan-record客服助手
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.2.23@f500332838ed670d0962a4f727618a2eb7e27a453ea56e72a28731f5f383ab72
+    version: null
+kind: app
+model_config:
+  agent_mode:
+    enabled: false
+    max_iteration: 10
+    strategy: function_call
+    tools: []
+  annotation_reply:
+    enabled: false
+  chat_prompt_config:
+    prompt:
+    - role: system
+      text: ''
+  completion_prompt_config:
+    conversation_histories_role:
+      assistant_prefix: ''
+      user_prefix: ''
+    prompt:
+      text: ''
+  dataset_configs:
+    datasets:
+      datasets:
+      - dataset:
+          enabled: true
+          id: 9934a371-7c10-448a-bcd1-aa595a937448
+    reranking_enable: true
+    reranking_mode: reranking_model
+    reranking_model:
+      reranking_model_name: qwen3-rerank
+      reranking_provider_name: langgenius/tongyi/tongyi
+    retrieval_model: multiple
+    top_k: 4
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    allowed_file_extensions:
+    - .JPG
+    - .JPEG
+    - .PNG
+    - .GIF
+    - .WEBP
+    - .SVG
+    - .MP4
+    - .MOV
+    - .MPEG
+    - .WEBM
+    allowed_file_types: []
+    allowed_file_upload_methods:
+    - remote_url
+    - local_file
+    enabled: false
+    image:
+      detail: high
+      enabled: false
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+    number_limits: 3
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: qwen3.8-flash
+    provider: langgenius/tongyi/tongyi
+  more_like_this:
+    enabled: false
+  opening_statement: ''
+  pre_prompt: '角色：
+
+    你是 Plan-Record 的智能客服助手，帮助用户理解和使用每日计划、长期计划、周完成度、旅行记录、心情日记及账户功能，并解答操作、数据保存、同步和统计相关问题。
+
+    原则：
+
+    优先根据已提供的操作指南、问题文档及 CSV 表格回答
+
+    区分已实现功能、尚未实现功能和无法确认的情况，不把产品规划当作当前功能。
+
+    知识库没有明确依据时，直接说明“目前资料无法确认”，必要时建议联系维护者核实。
+
+    排查问题时，先确认所在模块、账户、日期或周期、是否点击保存以及错误提示；信息不足时，只询问最必要的问题。
+
+    涉及保存失败或数据异常时，先提醒用户保留当前内容，再提供排查步骤，避免直接建议刷新、退出登录或清除缓存。
+
+    不索取密码、验证码、访问令牌等敏感信息，不承诺数据一定可恢复，也不声称已替用户查询或修改后台数据。
+
+    结构化输出：
+
+    根据问题复杂度选择以下结构，简单问题可以直接回答：
+
+    **直接解答：**先回答用户最关心的问题。
+
+    **操作步骤：**按顺序给出可执行的步骤，使用实际页面和按钮名称。
+
+    **注意事项：**仅补充与当前问题有关的功能限制、保存规则或同步边界。
+
+    **仍未解决：**说明下一步需要补充的信息或需要维护者核查的事项。
+
+    知识库提供明确来源时，可在回答末尾注明对应文档名称及章节，不编造引用。
+
+    重点突出：
+
+    重点解释“页面已经变化”和“云端已经保存”的区别，以及日期选择、统计周期和跨页面同步规则。涉及长期步骤加入每日计划时，明确说明当前是创建独立任务，完成状态不会自动双向同步。涉及未实现的按钮或功能时，直接说明当前限制。涉及删除操作时，根据具体模块说明确认机制及恢复限制。
+
+    回答风格：
+
+    使用简洁、自然、友好的中文，面向没有技术背景的普通用户。先给结论，再给步骤，避免堆砌术语、重复说明和无关内容。优先提供用户可以自行完成的方法，不轻易将问题归因于用户操作。遇到不确定情况如实说明，不猜测、不夸大、不编造功能或联系方式。'
+  prompt_type: simple
+  retriever_resource:
+    enabled: true
+  sensitive_word_avoidance:
+    enabled: false
+  speech_to_text:
+    enabled: false
+  suggested_questions: []
+  suggested_questions_after_answer:
+    enabled: false
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form: []
+version: 0.7.0
