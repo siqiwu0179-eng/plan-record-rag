@@ -1,6 +1,6 @@
 # PlanRecord RAG 客服助手
 
-独立于 PlanRecord 网页项目的 Dify 应用备份。备份日期：2026-10-21（Asia/Shanghai）。
+独立于 PlanRecord 网页项目的 Dify 应用备份。备份日期：2026-10-21。
 
 ## 备份内容
 
